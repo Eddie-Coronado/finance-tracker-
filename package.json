@@ -1,0 +1,24 @@
+{
+  "name": "finance-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eddie-Coronado/finance-tracker-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eddie-Coronado/finance-tracker-/issues"
+  },
+  "homepage": "https://github.com/Eddie-Coronado/finance-tracker-#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.0",
+    "jquery": "^3.6.0",
+    "normalize.css": "^8.0.1"
+  }
+}
