@@ -3,9 +3,8 @@ const loginHandler = async (event) => {
     event.preventDefault();
 
     // these save the entries for email and passwor and assign them to variables\
-    // change whats is targeted to Jays html form
-    const email = document.querySelector('#login-email').value.trim();
-    const password = document.querySelector('#login-pass').value.trim();
+    const email = document.querySelector('#exampleInputEmail1').value.trim();
+    const password = document.querySelector('#exampleInputPasword1').value.trim();
 
     // tests if an email and password were entered at all
     if (email && password) {
@@ -25,5 +24,5 @@ const loginHandler = async (event) => {
     }
 };
 
-// change whats is targeted to Jays html form
-document.querySelector('.login-form').addEventListener('submit', loginHandler);
+// On login.html, adjust the <form></form> division to have an id or class of #login-form or .login-form
+document.querySelector('#login-form').addEventListener('submit', loginHandler);
