@@ -4,7 +4,7 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection')
 
 const app = express();
-const PORT = process.env.PORT || 3008;
+const PORT = process.env.PORT || 3306;
 
 const sesh = {
 // I am uncertain on how to create a new session object/variable thing...
