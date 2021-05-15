@@ -24,10 +24,11 @@ Spending.init(
       allowNull: false,
     },
     sequelize,
+    timestamp: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'spending',
   }
 );
 
-module.exports = Finance;
+module.exports = Spending;
