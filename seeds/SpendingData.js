@@ -1,6 +1,6 @@
-//const { Spending } = require('../models');
+const { Spending } = require('../models');
 
-//const SpendingData = 
+const spendingData = 
 [
   {
     bucket: 1,
@@ -23,6 +23,6 @@
 
 ];
 
-// const seedSpending = () => Spending.bulkCreate(SpendingData);
+ const seedSpending = () => Spending.bulkCreate(spendingData);
 
-// module.exports = seedSpending;
+ module.exports = seedSpending;

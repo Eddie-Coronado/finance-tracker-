@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 3001;
 const sess = {
   secret: 'Secret',
   cookie: {},
-  resave: false,
-  saveUninitialized: true,
+  resave: true,
+  saveUninitialized: false,
   store: new SequelizeStore({
     db: sequelize,
   }),
@@ -25,7 +25,7 @@ app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', 'main');
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
