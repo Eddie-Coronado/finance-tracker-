@@ -24,6 +24,6 @@
   }
 ];
 
- const seedFinance = () => Finance.bulkCreate(financeData);
+const seedFinance = () => Finance.bulkCreate(financeData);
 
 module.exports = seedFinance;
