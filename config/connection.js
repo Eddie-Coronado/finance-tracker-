@@ -1,6 +1,13 @@
 require('dotenv').config();
 const Sequelize =  require('sequelize');
 
+const client = new plaid.Client(
+    process.env.PLAID_CLIENT_ID, 
+    process.env.PLAID_SECRET, 
+    process.env.PLAID_PUBLIC_KEY,
+    'sandbox');
+
+
 const sequelize = new Sequelize (
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -13,3 +20,4 @@ const sequelize = new Sequelize (
 );
 
 module.exports = sequelize;
+module.exports = client;
