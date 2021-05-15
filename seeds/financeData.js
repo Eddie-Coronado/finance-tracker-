@@ -1,23 +1,28 @@
 const { Finance } = require('../models');
 
-const financedata = [
+const financeData = [
   {
-    category: 'Gas',
-    timestamp: '1/1/2021',
-    amount: 45,
+    bucket: 1,
+    category: 'Needs',
+    amount: 1000,
   },
   {
-    category: 'Food',
-    timestamp: '1/2/2021',
-    amount: 100,
+    bucket: 2,
+    category: 'Wants',
+    amount: 600,
   },
   {
-    category: 'Gym',
-    timestamp: '1/2/2021',
-    amount: 50,
+    bucket: 3,
+    category: 'Savings',
+    amount: 400,
+  },
+  {
+    bucket: 4,
+    category: 'Total',
+    amount: 2000,
   }
 ];
 
-const seedFinance = () => Finance.bulkCreate(financedata);
+const seedFinance = () => Finance.bulkCreate(financeData);
 
 module.exports = seedFinance;

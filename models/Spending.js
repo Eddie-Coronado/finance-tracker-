@@ -1,17 +1,22 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Finance extends Model {}
+class Spending extends Model {}
 
-Finance.init(
+Spending.init(
   {
     bucket: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
-    category: {
+    description: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    timestamp: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
     amount: {
@@ -21,9 +26,8 @@ Finance.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'finance',
+    modelName: 'spending',
   }
 );
 
 module.exports = Finance;
-
