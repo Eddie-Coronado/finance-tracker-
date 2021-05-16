@@ -1,11 +1,12 @@
 require('dotenv').config();
 const Sequelize =  require('sequelize');
+const plaid = require('plaid');
 
-const client = new plaid.Client(
-    process.env.PLAID_CLIENT_ID, 
-    process.env.PLAID_SECRET, 
-    process.env.PLAID_PUBLIC_KEY,
-    'sandbox');
+const client = new plaid.Client({
+    clientID: process.env.PLAID_CLIENT_ID, 
+    secret: process.env.PLAID_SECRET, 
+    env: plaid.environments.sandbox,
+});
 
 
 const sequelize = new Sequelize (

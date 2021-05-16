@@ -1,0 +1,34 @@
+{
+  "name": "finance-tracker-",
+  "version": "1.0.0",
+  "description": "Budget/Finances tracker to help with spending/saving habits",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eddie-Coronado/finance-tracker-.git"
+  },
+  "author": "Eddie, Nate, Jay, and Gian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Eddie-Coronado/finance-tracker-/issues"
+  },
+  "homepage": "https://github.com/Eddie-Coronado/finance-tracker-#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "docker": "^1.0.0",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.2.5",
+    "plaid": "^8.5.0",
+    "sequelize": "^6.6.2",
+    "session": "^0.1.0"
+  }
+}
