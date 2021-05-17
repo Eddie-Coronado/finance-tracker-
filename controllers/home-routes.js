@@ -1,27 +1,27 @@
 const router = require('express').Router();
 
-const { Gallery, Painting } = require('../models');
+const { Finance, Spending } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
 // GET spending for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
+    const dbFiananceData = await Gallery.findAll({
       include: [
         {
-          model: Painting,
-          attributes: ['filename', 'description'],
+          model: finance,
+          attributes: ['bicket', 'category', 'amount'],
         },
       ],
     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
+    const finanaces = dbFiananceData.map((finance) =>
+      finance.get({ plain: true })
     );
 
     res.render('homepage', {
-      galleries,
+      finanaces,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
