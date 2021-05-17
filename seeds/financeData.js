@@ -1,6 +1,6 @@
- const { Finance } = require('../models');
+//  const { Finance } = require('../models');
 
- const financeData = 
+//  const financeData = 
 [
   {
     bucket: 1,
@@ -24,6 +24,6 @@
   }
 ];
 
-const seedFinance = () => Finance.bulkCreate(financeData);
+// const seedFinance = () => Finance.bulkCreate(financeData);
 
-module.exports = seedFinance;
+// module.exports = seedFinance;

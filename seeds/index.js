@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
-const seedFinance = require('./financeData');
-const seedSpending = require('./spendingData');
+ const seedFinance = require('./financeData');
+ const seedSpending = require('./spendingData');
 // const Finance = require('../models/Finance');
 // const Spending = require('../models/Spending');
 
@@ -19,9 +19,9 @@ const seedAll = async () => {
   //   returning: true,
   // });
 
-  await seedFinance();
+   await seedFinance();
 
-  await seedSpending();
+   await seedSpending();
 
   process.exit(0);
 };
