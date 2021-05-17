@@ -1,6 +1,6 @@
 // These routes are meant to handle the login/logout/create user pages
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User } = require('../../models/user');
 
 // router.post('/create_link_token', async (req, res) => {
 //     try {
