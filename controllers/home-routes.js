@@ -10,8 +10,8 @@ router.get('/', async (req, res) => {
     const dbFiananceData = await Finance.findAll({
       include: [
         {
-          model: finance,
-          attributes: ['bucket', 'category', 'amount'],
+          model: Spending,
+          attributes: ['bucket', 'amount'],
         },
       ],
     });
@@ -31,17 +31,18 @@ router.get('/', async (req, res) => {
 });
 
 // Use the custom middleware before allowing the user to access the Finance
-router.get('/Finance/:id', withAuth, async (req, res) => {
+router.get('/finance/:id', withAuth, async (req, res) => {
   try {
     const dbGFinanceData = await Finance.findByPk(req.params.id, {
       include: [
         {
           model: Spending,
           attributes: [
+            'id',
             'bucket',
-            'timestamp',
-            'description',
+            'category',
             'amount',
+            'category',
           ],
         },
       ],

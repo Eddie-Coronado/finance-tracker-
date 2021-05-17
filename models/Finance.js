@@ -5,10 +5,15 @@ class Finance extends Model { }
 
 Finance.init(
   {
-    bucket: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
+    },
+    bucket: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     category: {
       type: DataTypes.STRING,

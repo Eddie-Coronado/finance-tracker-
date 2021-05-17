@@ -5,6 +5,12 @@ class Spending extends Model { }
 
 Spending.init(
     {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+          },
         bucket: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -21,6 +27,13 @@ Spending.init(
         amount: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        finance_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'finance',
+              key: 'id',
+            },
         },
     },
     {
