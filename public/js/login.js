@@ -1,28 +1,50 @@
-const loginHandler = async (event) => {
-    // prevents from automatic page refresh, removing data being entered in
+const loginFormHandler = async (event) => {
     event.preventDefault();
-
-    // these save the entries for email and passwor and assign them to variables\
-    const email = document.querySelector('#exampleInputEmail1').value.trim();
-    const password = document.querySelector('#exampleInputPasword1').value.trim();
-
-    // tests if an email and password were entered at all
+  
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
+  
     if (email && password) {
-        // awaits and saves login response, formats to json
-        const response = await fetch('/api/users/login', {
-            method: 'POST', 
-            body: JSON.stringify({ email, password}),
-            headers: {'Content-Type': 'application/json'}
-            }   
-        );
-
-        if (response.ok) {
-            document.location.replace('/');
-        } else {
-            alert('Login Failed :(');
-        }
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to log in.');
+      }
+    }
+};
+  
+const signupFormHandler = async (event) => {
+    event.preventDefault();
+  
+    const username = document.querySelector('#username-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+  
+    if (username && email && password) {
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ username, email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to sign up.');
+      }
     }
 };
 
-// On login.html, adjust the <form></form> division to have an id or class of #login-form or .login-form
-document.querySelector('#login-form').addEventListener('submit', loginHandler);
+  document
+    .querySelector('.login-form')
+    .addEventListener('submit', loginFormHandler);
+  
+  document
+    .querySelector('.signup-form')
+    .addEventListener('submit', signupFormHandler);

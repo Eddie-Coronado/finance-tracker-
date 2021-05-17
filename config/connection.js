@@ -1,12 +1,12 @@
+const Sequelize = require('sequelize');
 require('dotenv').config();
-const Sequelize =  require('sequelize');
 const plaid = require('plaid');
 
-const client = new plaid.Client({
-    clientID: process.env.PLAID_CLIENT_ID, 
-    secret: process.env.PLAID_SECRET, 
-    env: plaid.environments.sandbox,
-});
+// const client = new plaid.Client({
+//     clientID: process.env.PLAID_CLIENT_ID, 
+//     secret: process.env.PLAID_SECRET, 
+//     env: plaid.environments.sandbox,
+// });
 
 
 const sequelize = new Sequelize (
@@ -16,9 +16,9 @@ const sequelize = new Sequelize (
     {
         host: 'localhost',
         dialect: 'mysql',
-        port: 3008,
+        port: 3306,
     }
 );
 
 module.exports = sequelize;
-module.exports = client;
+// module.exports = client;

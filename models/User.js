@@ -1,15 +1,14 @@
-const bcrypt = require('bcrypt'); // npm install bcrypt.js
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
-const model = require('sequelize');
 const Datatype = require('sequelize');
 const { beforeCreate } = require('../config/connection');
 
-class User extends model {
-    recallPassword(userPW) {
-        let comparePW = bcrypt.compareSync(userPW, this.password);
-        return comparePW;
+class User extends Model {
+    checkPassword(loginPw) {
+      return bcrypt.compareSync(loginPw, this.password);
     }
-};
+}
 
 User.init(
     {
@@ -35,15 +34,15 @@ User.init(
             type: Datatypes.STRING,
             allowNull: false,
             validate: {
-                len: [10],
+                len: [6],
             },
         },
     },
     {
         hooks: {
-            async beforeCreate(login) {
-                login.password = await bcrypt.hash(login.password, 10);
-                return login;
+            async beforeCreate(newUserData) {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
             }, 
         },
         sequelize,
