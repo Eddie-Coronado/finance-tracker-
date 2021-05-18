@@ -6,4 +6,4 @@ let gatherTransactions = () => {
 //     console.error(errormessage);
 // };
 
-module.exports = gatherTransactions, handleError;
+module.exports = gatherTransactions;
